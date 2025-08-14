@@ -1,8 +1,26 @@
 import Image from "next/image";
 import Container from "@/components/ui/container";
-import { isPagesAPIRouteMatch } from "next/dist/server/route-matches/pages-api-route-match";
+import React from "react";
 
-const tile = [
+// Tile type definitions
+type TextTileType = {
+  type: "text";
+  content: { text: string };
+};
+
+type PictureTileType = {
+  type: "picture";
+  content: { text: string; src: string };
+};
+
+type EmptyTileType = {
+  type: "empty";
+  content: {};
+};
+
+type Tile = TextTileType | PictureTileType | EmptyTileType;
+
+const tiles: Tile[] = [
   {
     type: "picture",
     content: {
@@ -12,10 +30,7 @@ const tile = [
   },
   {
     type: "text",
-    content: {
-      text: "Believe you can and you're halfway there.",
-      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/image/demo.jpg",
-    },
+    content: { text: "Believe you can and you're halfway there." },
   },
   {
     type: "picture",
@@ -38,13 +53,7 @@ const tile = [
       src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/image/demo.jpg",
     },
   },
-  {
-    type: "empty",
-    content: {
-      text: "The journey of a thousand miles begins with a single step.",
-      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/image/demo.jpg",
-    },
-  },
+  { type: "empty", content: {} },
   {
     type: "picture",
     content: {
@@ -54,59 +63,52 @@ const tile = [
   },
 ];
 
-console.log(tile);
+// Small dedicated component for each tile type
+const TextTile: React.FC<{ text: string }> = ({ text }) => (
+  <div className="tile overflow-hidden h-100 w-100">
+    <p className="text-lg">{text}</p>
+  </div>
+);
+
+const PictureTile: React.FC<{ src: string }> = ({ src }) => (
+  <div
+    className="tile overflow-hidden h-100 w-100"
+    style={{
+      backgroundImage: `url('${src}')`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  />
+);
+
+const EmptyTile: React.FC = () => (
+  <div className="tile overflow-hidden h-100 w-100" />
+);
+
+// Renderer function
+const renderTile = (item: Tile, index: number) => {
+  switch (item.type) {
+    case "text":
+      return <TextTile key={index} text={item.content.text} />;
+    case "picture":
+      return <PictureTile key={index} src={item.content.src} />;
+    case "empty":
+      return <EmptyTile key={index} />;
+    default:
+      return null;
+  }
+};
 
 export default function Home() {
-  function renderText(item, index) {
-    return (
-      <div key={index} className="tile overflow-hidden h-100 w-100   ">
-        <p className="text-lg">
-          Lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
-          voluptas, perspiciatis deserunt molestiae non labore perferendis
-          sapiente esse corporis commodi! ipsum dolor sit amet consectetur
-          adipisicing elit. Temporibus, voluptatem?
-        </p>
-      </div>
-    );
-  }
-
-  function renderPicture(item, index) {
-    return (
-      <div
-        key={index}
-        className="tile overflow-hidden h-100 w-100"
-        style={{
-          backgroundImage: `url('${item.content.src}')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></div>
-    );
-  }
-  function renderEmpty(item, index) {
-    return <div key={index} className="tile overflow-hidden h-100 w-100"></div>;
-  }
   return (
-    <main>
+    <section className="my-16 md:my-32">
       <Container>
-        <h1 className="font-semibild text-3xl md:text-6xl my-10 md:my-20">
-          Gallery
-        </h1>
-
-      
+        <h1 className=" text-3xl md:text-6xl my-10 md:my-20">Gallery</h1>
 
         <div className="flex gap-4 flex-wrap justify-center">
-          {tile.map((item, index) =>
-            item.type === "text"
-              ? renderText(item, index)
-              : item.type === "picture"
-              ? renderPicture(item, index)
-              : item.type === "empty"
-              ? renderEmpty(item, index)
-              : null
-          )}
+          {tiles.map((item, index) => renderTile(item, index))}
         </div>
       </Container>
-    </main>
+    </section>
   );
 }
