@@ -24,41 +24,71 @@ const tiles: Tile[] = [
   {
     type: "picture",
     content: {
-      text: "Strive not to be a success, but to be of value.",
-      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/image/demo.jpg",
-    },
-  },
-  {
-    type: "text",
-    content: { text: "Believe you can and you're halfway there." },
-  },
-  {
-    type: "picture",
-    content: {
-      text: "Whatever you are, be a good one.",
-      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/image/demo.jpg",
+      text: "",
+      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-gallery/IMG-20250623-WA0156.jpg",
     },
   },
   {
     type: "picture",
     content: {
-      text: "The journey of a thousand miles begins with a single step.",
-      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/image/demo.jpg",
+      text: "",
+      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-gallery/IMG-20250623-WA0158.jpg",
     },
   },
   {
     type: "picture",
     content: {
-      text: "The journey of a thousand miles begins with a single step.",
-      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/image/demo.jpg",
+      text: "",
+      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-gallery/IMG-20250628-WA0072.jpg",
     },
   },
-  { type: "empty", content: {} },
   {
     type: "picture",
     content: {
-      text: "The journey of a thousand miles begins with a single step.",
-      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/image/demo.jpg",
+      text: "",
+      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-gallery/IMG-20250628-WA0075.jpg",
+    },
+  },
+  {
+    type: "picture",
+    content: {
+      text: "",
+      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-gallery/IMG-20250628-WA0076.jpg",
+    },
+  },
+  {
+    type: "picture",
+    content: {
+      text: "",
+      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-gallery/IMG-20250628-WA0077.jpg",
+    },
+  },
+  {
+    type: "picture",
+    content: {
+      text: "",
+      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-gallery/IMG-20250628-WA0080.jpg",
+    },
+  },
+  {
+    type: "picture",
+    content: {
+      text: "",
+      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-gallery/IMG-20250628-WA0087.jpg",
+    },
+  },
+  {
+    type: "picture",
+    content: {
+      text: "",
+      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-gallery/IMG-20250628-WA0089.jpg",
+    },
+  },
+  {
+    type: "picture",
+    content: {
+      text: "",
+      src: "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-gallery/Screenshot_20250703_193340_WhatsApp.jpg",
     },
   },
 ];
@@ -103,7 +133,7 @@ export default function Home() {
   return (
     <section className="my-16 md:my-32">
       <Container>
-        <h1 className=" text-3xl md:text-6xl my-10 md:my-20">Gallery</h1>
+        <h1 className=" text-3xl md:text-6xl my-10 md:my-20 italics">Gallery</h1>
 
         <div className="flex gap-4 flex-wrap justify-center">
           {tiles.map((item, index) => renderTile(item, index))}
