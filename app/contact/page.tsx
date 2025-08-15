@@ -49,7 +49,7 @@ export default function Home() {
 
             <ul className="flex gap-2 flex-col">
               {links.map((item, index) => (
-                <li className="border border-foreground backdrop-blur-sm bg-foreground/30 p-2 justify-between flex">
+                <li key={index} className="border border-foreground backdrop-blur-sm bg-foreground/30 p-2 justify-between flex">
                   <span className="flex gap-2">
                     {item.icon}
                     <Link href={item.url}>{item.label}</Link>
