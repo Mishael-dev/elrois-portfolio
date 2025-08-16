@@ -6,6 +6,7 @@ export interface PortfolioItemProps {
   description: string;
   date: string;
   tags: string[];
+  id: string; 
 }
 
 export function PortfolioItem({
@@ -14,10 +15,11 @@ export function PortfolioItem({
   description,
   date,
   tags,
+  id
 }: PortfolioItemProps) {
   return (
     <div>
-      <Link href="">
+      <Link href={`/portfolio/${id}`}>
         <div
           className="bg-cover bg-center h-64 w-full"
           style={{ backgroundImage: `url(${media})` }}

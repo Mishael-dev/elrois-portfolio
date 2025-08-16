@@ -1,107 +1,50 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import Container from "@/components/ui/container";
-import Link from "next/link";
 import { PortfolioItem } from "@/components/portfolioItem";
+import { getPortfolioItems } from "@/demo/portfolioitems";
 
-export interface PortfolioItem {
-  title: string; // A simple, descriptive name for the piece
-  media: string; // URL to the artwork image
-  description: string; // Short narrative about the piece
-  date: string; // Year or full date when the artwork was completed
-  tags: string[]; // List of tags/categories for filtering
-}
 
-const portfolioItems: PortfolioItem[] = [
-  {
-    title: "Whispers of the Sea",
-    media:
-      "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-portfolio/gettyimages-1190200652-1024x1024.jpg",
-    description:
-      "An abstract piece capturing the calm and chaos of ocean waves colliding with the shore.",
-    date: "2021",
-    tags: ["abstract", "ocean", "painting"],
-  },
-  {
-    title: "Urban Echoes",
-    media:
-      "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-portfolio/gettyimages-1190200652-1024x1024.jpg",
-    description:
-      "A modern exploration of city life, blending geometric forms with muted tones.",
-    date: "2022",
-    tags: ["modern", "city", "digital"],
-  },
-  {
-    title: "Golden Horizon",
-    media:
-      "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-portfolio/gettyimages-1190200652-1024x1024.jpg",
-    description:
-      "Inspired by sunsets, this work reflects warmth, hope, and endless possibilities.",
-    date: "2023",
-    tags: ["sunset", "nature", "landscape"],
-  },
-  {
-    title: "Silent Conversations",
-    media:
-      "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-portfolio/gettyimages-1190200652-1024x1024.jpg",
-    description:
-      "A minimalist approach to the human connection through muted colors and empty spaces.",
-    date: "2020",
-    tags: ["minimalist", "portrait", "conceptual"],
-  },
-  {
-    title: "Dream in Motion",
-    media:
-      "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-portfolio/gettyimages-1190200652-1024x1024.jpg",
-    description:
-      "Fluid brushstrokes and blurred edges represent fleeting thoughts and imagination.",
-    date: "2019",
-    tags: ["expressionism", "dream", "motion"],
-  },
-];
 
-function PortfolioTags() {
-  // Extract and deduplicate all tags
+let portfolioItems = getPortfolioItems();
+
+export default function Home() {
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  const filteredItems = selectedTag
+    ? portfolioItems.filter((item) => item.tags.includes(selectedTag))
+    : portfolioItems;
+
   const allTags = Array.from(
     new Set(portfolioItems.flatMap((item) => item.tags))
   );
 
   return (
-    <ul className="flex flex-nowrap md:flex-wrap gap-2 overflow-x-auto md:overflow-hidden p-2 md:p-0">
-      {allTags.map((tag, index) => (
-        <li
-          className="backdrop-blur-sm bg-foreground/30 rounded-full px-3 py-1"
-          key={index}
-        >
-          {tag}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-
-
-function PortfolioItems() {
-  return (
-    <>
-      {portfolioItems.map((item, index) => (
-        <PortfolioItem key={index} {...item} />
-      ))}
-    </>
-  );
-}
-
-export default function Home() {
-  return (
     <section className="my-16 md:my-32">
       <Container>
         <div className="flex md:gap-10 flex-col md:flex-row">
           <aside className="max-w-sm md:border-r md:basis-1/3 w-full sticky top-0 self-start h-fit">
-            <PortfolioTags />
+            <ul className="flex flex-nowrap md:flex-wrap gap-2 overflow-x-auto md:overflow-hidden p-2 md:p-0">
+              {allTags.map((tag, index) => (
+                <li
+                  className="backdrop-blur-sm bg-foreground/30 rounded-full px-3 py-1 cursor-pointer"
+                  key={index}
+                  
+                  onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
           </aside>
 
           <div className="flex flex-col gap-8 basis-3/5">
-            <PortfolioItems />
+            <>
+              {filteredItems.map((item, index) => (
+                <PortfolioItem key={index} {...item} />
+              ))}
+            </>
           </div>
         </div>
       </Container>
