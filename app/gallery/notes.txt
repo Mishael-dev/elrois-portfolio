@@ -1,16 +1,1 @@
-{tile.map((item, index) =>
-            item.type === "text" ? (
-              <div key={index} className="tile overflow-hidden h-100 w-100   ">
-                <p className="text-lg">
-                  Lorem Lorem ipsum, dolor sit amet consectetur adipisicing
-                  elit. Quidem voluptas, perspiciatis deserunt molestiae non
-                  labore perferendis sapiente esse corporis commodi! ipsum dolor
-                  sit amet consectetur adipisicing elit. Temporibus, voluptatem?
-                </p>
-              </div>
-            ) : item.type === "picture" ? (
-              "picture"
-            ) : item.type === "empty" ? (
-              "empty"
-            ) : null
-          )}
+anytime a link is clicked i want it to add a search param that is going to filter the items on that page by that that so can you do that 
