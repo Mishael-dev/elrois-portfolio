@@ -65,7 +65,7 @@ function PortfolioTags() {
   );
 
   return (
-    <ul className="flex flex-wrap gap-2">
+    <ul className="flex flex-nowrap md:flex-wrap gap-2 overflow-x-auto md:overflow-hidden p-2 md:p-0">
       {allTags.map((tag, index) => (
         <li
           className="backdrop-blur-sm bg-foreground/30 rounded-full px-3 py-1"
@@ -124,8 +124,8 @@ export default function Home() {
   return (
     <section className="my-16 md:my-32">
       <Container>
-        <div className="flex gap-10">
-          <aside className="max-w-sm border-r basis-1/3 sticky top-20 self-start h-fit">
+        <div className="flex md:gap-10 flex-col md:flex-row">
+          <aside className="max-w-sm md:border-r md:basis-1/3 w-full sticky top-0 self-start h-fit">
             <PortfolioTags />
           </aside>
 
