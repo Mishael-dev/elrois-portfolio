@@ -137,8 +137,8 @@ export default function PortfolioHero() {
               {/* Main portrait container */}
               <div className="relative w-80 h-96 lg:w-96 lg:h-[500px] rounded-2xl overflow-hidden border-2 border-[#dac5a7]/30 shadow-2xl shadow-[#000000]/50">
                 <Image
-                  src="https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-gallery/IMG-20250628-WA0080.jpg"
-                  alt="Sarah Johnson - Visual Artist"
+                  src="https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-gallery/IMG-20250628-WA0072.jpg"
+                  alt="Elroi John Stanley - Visual Artist"
                   className="w-full h-full object-cover"
                   width={500}
                   height={500}

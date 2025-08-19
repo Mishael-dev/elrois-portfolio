@@ -19,12 +19,12 @@ export default function GallerySection() {
     {
       id: 1,
       title: "Sunset Reverie",
-      category: "landscapes",
-      medium: "Oil on Canvas",
-      year: "2024",
+      category: "abstract",
+      medium: "Penclil and Paper",
+      year: "2025",
       price: "$2,400",
       image:
-        "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&h=600&fit=crop",
+        "https://tuaaacbguivultdxbcmj.supabase.co/storage/v1/object/public/elroi-portfolio/Photo%20from%20Mishael%20(2).jpg",
     },
     {
       id: 2,
