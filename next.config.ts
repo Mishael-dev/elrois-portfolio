@@ -6,6 +6,9 @@ module.exports = {
       {
         protocol: 'https',
         hostname: '**.supabase.co',
+      },{
+        protocol: 'https',
+        hostname: '**.unsplash.com',
       },
     ],
   },

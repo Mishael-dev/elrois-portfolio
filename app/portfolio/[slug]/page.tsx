@@ -2,7 +2,6 @@ import Container from "@/components/ui/container";
 import { getPortfolioItems } from "@/demo/portfolioitems";
 import Image from "next/image";
 import { getPortfolioItemById } from "@/lib/portfolio";
-import type { PortfolioItem } from "@/demo/portfolioitems";
 import { notFound } from "next/navigation";
 
 interface PageProps {

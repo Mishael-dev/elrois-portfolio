@@ -1,5 +1,12 @@
+import ProcessSection from "@/components/ProcessSection";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "@/components/Footer";
+import PoetrySection from "@/components/Poetry";
+import PortfolioHero from "@/components/heroSection";
+import Navigation from "@/components/Navbar";
+import Container from "@/components/ui/container";
+import GallerySection from "@/components/GallerySection";
 
 interface Page {
   label: string;
@@ -16,19 +23,17 @@ const pages: Page[] = [
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <nav className="flex flex-col items-center">
-          <span className="text-3xl">el-ROI</span>
-          <ul className="flex gap-3">
-            {pages.map((item, index) => (
-              <li key={index}>
-                <Link className="font-extralight" href={item.url}>{item.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <Container>
+          <Navigation />
+          <PortfolioHero />
+          <GallerySection />
+          <ProcessSection />
+          <PoetrySection />
+        </Container>
       </main>
+      <Footer />
     </div>
   );
 }
