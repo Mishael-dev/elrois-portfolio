@@ -16,7 +16,7 @@ export default function PortfolioHero() {
         <div className="absolute top-2/3 left-1/6 w-3 h-3 bg-[#dac5a7]/10 rounded-full animate-pulse delay-2000"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-8 lg:px-16 pt-28 pb-16">
+      <div className="relative max-w-7xl mx-auto px-0 lg:px-16 pt-28 pb-16">
         <div className="grid lg:grid-cols-12 gap-16 items-center min-h-[calc(100vh-8rem)]">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-7 space-y-12">
@@ -112,14 +112,14 @@ export default function PortfolioHero() {
             <div className="flex flex-col sm:flex-row gap-6">
               <Button
                 size="lg"
-                className="bg-[#dac5a7] hover:bg-[#c9b595] text-[#1a1a1a] px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-[#dac5a7]/20 hover:shadow-[#dac5a7]/30"
+                className="bg-[#dac5a7] hover:bg-[#c9b595] text-[#1a1a1a] px-0 py-4 rounded-full transition-all duration-300 shadow-lg shadow-[#dac5a7]/20 hover:shadow-[#dac5a7]/30"
               >
                 <a href="/gallery">Explore My Gallery</a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-[#dac5a7]/50 text-[#dac5a7] hover:bg-[#dac5a7]/10 hover:border-[#dac5a7] px-8 py-4 rounded-full transition-all duration-300"
+                className="border-2 border-[#dac5a7]/50 text-[#dac5a7] hover:bg-[#dac5a7]/10 hover:border-[#dac5a7] px-0 py-4 rounded-full transition-all duration-300"
               >
                 <a href="/about">Learn More About Me</a>
               </Button>

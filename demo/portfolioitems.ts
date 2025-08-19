@@ -7,6 +7,7 @@ export interface PortfolioItem {
   tags: string[]; // List of tags/categories for filtering
 }
 
+
 const portfolioItems: PortfolioItem[] = [
   {
     id: "1",

@@ -171,15 +171,10 @@ export default function Footer() {
               <div className="text-sm">
                 <div className="text-[#dac5a7] mb-1">Commission Available</div>
                 <div className="text-white/60">
-                  Currently accepting new commission projects for Spring 2024
+                  Currently accepting new commission projects for Spring 2026
                 </div>
               </div>
-              <div className="text-sm">
-                <div className="text-[#dac5a7] mb-1">Workshop</div>
-                <div className="text-white/60">
-                  Oil Painting Techniques - Online workshop coming soon
-                </div>
-              </div>
+            
             </div>
           </div>
         </div>
@@ -190,7 +185,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-8 lg:px-16 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-white/60 text-sm mb-4 md:mb-0">
-              © {currentYear} Sarah Johnson Art. All rights reserved.
+              © {currentYear} Elroi John Stanley Art. All rights reserved.
             </div>
 
             <div className="flex items-center space-x-6">
@@ -208,7 +203,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center text-white/60 text-sm">
                 Made with <Heart className="w-3 h-3 mx-1 text-[#dac5a7]" /> in
-                Seattle
+                Jos
               </div>
             </div>
           </div>
