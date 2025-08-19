@@ -3,7 +3,7 @@ import Container from "@/components/ui/container";
 
 export default function Home() {
   return (
-    <section className="my-16 md:my-32">
+    <section className="my-24 md:my-32">
       <Container>
         <div className="flex flex-col md:flex-row gap-10 md:gap-20 justify-center ">
           <div className="">
@@ -12,15 +12,31 @@ export default function Home() {
               alt="Elroi John Stanley"
               width={300}
               height={300}
+              className="rounded-lg"
             />
           </div>
 
           <div className="max-w-2xl mt-8 flex flex-col gap-4">
-            <h1 className="text-5xl flex flex-col">
-              <span>Elroi</span>
-              <span className="italic">John Stanley</span>
-            </h1>
-            <p className="text-foreground/80">
+            <div>
+              <h1
+                className="text-white text-5xl lg:text-8xl mb-4 tracking-tight"
+                style={{
+                  fontFamily: "Satoshi, sans-serif",
+                  fontWeight: 200,
+                  lineHeight: "0.9",
+                }}
+              >
+                Elroi
+                <br />
+                <span
+                  className="text-[#dac5a7] italic"
+                  style={{ fontFamily: "serif", fontWeight: 300 }}
+                >
+                  John Stanley
+                </span>
+              </h1>
+            </div>
+            <p className="text-white/70 max-w-2xl mx-auto leading-relaxed">
               I am a student of visual arts in my second year, I'm Soft-spoken
               soul painting quiet dreams Lover of pretty things ✨ poetry,
               fashion & classic novels Art that speaks when words fall short
@@ -31,7 +47,7 @@ export default function Home() {
         {/* my story */}
         <div className="max-w-4xl text-justify mx-auto">
           <h2 className="text-3xl mt-16">My Story</h2>
-          <p className="mt-4 text-foreground/80">
+          <p className="text-white/70 max-w-2xl mx-auto leading-relaxed">
             I am a second-year Visual Arts student, a soft-spoken soul who finds
             her loudest voice in colors, textures, and quiet moments. My love
             for art began in the small, unspoken details of life—sunlight

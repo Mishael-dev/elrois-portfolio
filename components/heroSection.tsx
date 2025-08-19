@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { ArrowDown, Palette, Award } from "lucide-react";
+import { ArrowDown, Palette, Award, Link } from "lucide-react";
 
 export default function PortfolioHero() {
   return (
@@ -78,7 +78,7 @@ export default function PortfolioHero() {
                   className="text-[#dac5a7] text-3xl lg:text-4xl mb-2"
                   style={{ fontFamily: "Satoshi, sans-serif", fontWeight: 300 }}
                 >
-                  15+
+                  1
                 </div>
                 <div className="text-white/60 text-sm uppercase tracking-wide">
                   Exhibitions
@@ -89,7 +89,7 @@ export default function PortfolioHero() {
                   className="text-[#dac5a7] text-3xl lg:text-4xl mb-2"
                   style={{ fontFamily: "Satoshi, sans-serif", fontWeight: 300 }}
                 >
-                  1+
+                  3
                 </div>
                 <div className="text-white/60 text-sm uppercase tracking-wide">
                   Works Created
@@ -100,10 +100,10 @@ export default function PortfolioHero() {
                   className="text-[#dac5a7] text-3xl lg:text-4xl mb-2"
                   style={{ fontFamily: "Satoshi, sans-serif", fontWeight: 300 }}
                 >
-                  0
+                  2
                 </div>
                 <div className="text-white/60 text-sm uppercase tracking-wide">
-                  Awards
+                  Fans
                 </div>
               </div>
             </div>
@@ -114,14 +114,14 @@ export default function PortfolioHero() {
                 size="lg"
                 className="bg-[#dac5a7] hover:bg-[#c9b595] text-[#1a1a1a] px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-[#dac5a7]/20 hover:shadow-[#dac5a7]/30"
               >
-                Explore My Gallery
+                <a href="/gallery">Explore My Gallery</a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-[#dac5a7]/50 text-[#dac5a7] hover:bg-[#dac5a7]/10 hover:border-[#dac5a7] px-8 py-4 rounded-full transition-all duration-300"
               >
-                Learn More About Me
+                <a href="/about">Learn More About Me</a>
               </Button>
             </div>
           </div>
@@ -150,12 +150,8 @@ export default function PortfolioHero() {
                 {/* Artist signature/watermark */}
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-[#0a0a0a]/80 backdrop-blur-sm border border-[#dac5a7]/20 rounded-lg p-4">
-                    <div className="text-white text-sm mb-1">
-                      Elroi
-                    </div>
-                    <div className="text-[#dac5a7] text-xs">
-                      @ LIMCAF 2025
-                    </div>
+                    <div className="text-white text-sm mb-1">Elroi</div>
+                    <div className="text-[#dac5a7] text-xs">@ LIMCAF 2025</div>
                   </div>
                 </div>
               </div>

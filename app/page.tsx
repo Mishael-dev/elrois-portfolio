@@ -26,14 +26,12 @@ export default function Home() {
     <div>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Container>
-          <Navigation />
           <PortfolioHero />
           <GallerySection />
           <ProcessSection />
           <PoetrySection />
         </Container>
       </main>
-      <Footer />
     </div>
   );
 }
